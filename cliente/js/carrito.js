@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
     contenedor.innerHTML = '<div class="alert alert-info text-center">No hay productos en el carrito.</div>';
   } else {
     let total = 0;
+    let cantidadProductos = 0;
+    carrito.forEach(() => cantidadProductos++);
+    document.getElementById('carritoParentesis').textContent = `Carrito (${cantidadProductos})`;
     carrito.forEach(p => {
       total += p.precio;
       contenedor.innerHTML += `

@@ -2,8 +2,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   const contenedor = document.getElementById('contenedor-productos');
   const productos = await obtenerProductos();
   
-
+    let contador = 0;   
   productos.forEach(p => {
+    if(contador >=3) return;
     const card = document.createElement('div');
     card.className = "col-md-4";
     card.innerHTML = `
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       </div>
     `;
     contenedor.appendChild(card);
+    contador++;
   });
 });
 
